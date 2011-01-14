@@ -215,7 +215,8 @@ sub growl_feed {
                 description => encode_utf8($description),
                 icon        => $icon,
                 on_click    => sub {
-                    `open $stuff->{link}` if $stuff->{link};
+                    system 'open', $stuff->{link}
+                        if $stuff->{link};
                 },
             );
 
